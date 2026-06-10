@@ -1,20 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Cardápio Sublime</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sublime Bar — Cardápio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Sublime Bar — Cardápio Mobile</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap');
 
@@ -40,29 +29,27 @@
             color: var(--text);
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
         .page {
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 60px 50px 40px;
+            padding: 40px 20px 30px;
             background: var(--bg);
-            page-break-after: always;
             position: relative;
         }
 
-        /* Cabeçalho Atualizado */
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .logo-container {
             width: 100%;
-            max-width: 200px; /* Largura ideal para sua logo retangular */
-            margin: 0 auto 20px;
+            max-width: 160px;
+            margin: 0 auto 15px;
         }
 
         .logo-new {
@@ -73,8 +60,8 @@
 
         .bar-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 12px;
-            letter-spacing: 8px;
+            font-size: 10px;
+            letter-spacing: 6px;
             text-transform: uppercase;
             color: var(--gold);
             margin-bottom: 4px;
@@ -82,62 +69,81 @@
 
         .bar-sub {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 16px;
-            letter-spacing: 12px;
+            font-size: 14px;
+            letter-spacing: 8px;
             text-transform: uppercase;
             color: var(--white);
         }
 
-        /* Restante dos Estilos Originais */
         .index {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px 20px;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
+            gap: 8px 12px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
             border-bottom: 1px solid var(--divider);
         }
 
         .index a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 10px;
-            letter-spacing: 3px;
+            font-size: 9px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: color 0.3s;
             font-weight: 400;
         }
 
         .index a:hover { color: var(--gold); }
-        .index span { color: var(--gold); font-size: 10px; }
+        .index span { 
+            color: var(--gold); 
+            font-size: 9px;
+            display: inline-block;
+        }
 
-        .section { margin-bottom: 45px; page-break-inside: avoid; }
+        @media (max-width: 550px) {
+            .index span {
+                display: none;
+            }
+            .index a {
+                background: rgba(200, 169, 110, 0.1);
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 8px;
+            }
+        }
+
+        .section { 
+            margin-bottom: 40px; 
+            page-break-inside: avoid; 
+        }
+        
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
+            font-size: 20px;
             color: var(--gold);
             text-align: center;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-          margin-top: 40px;
+            margin-top: 30px;
             margin-bottom: 8px;
         }
 
         .section-subtitle {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
+            font-size: 12px;
             font-style: italic;
             color: var(--text-muted);
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .divider {
             width: 40px;
             height: 1px;
             background: var(--gold);
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             opacity: 0.6;
         }
 
@@ -146,51 +152,105 @@
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 6px;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 8px;
         }
 
-        .item-name { color: var(--white); font-size: 15px; flex: 1; min-width: 180px; }
-        .item-dots { flex: 2; border-bottom: 1px dotted var(--divider); min-width: 40px; margin-bottom: 3px; }
-        .item-price { color: var(--gold-light); font-size: 13px; white-space: nowrap; }
+        .item-name { 
+            color: var(--white); 
+            font-size: 14px; 
+            flex: 1; 
+            min-width: 160px;
+            font-weight: 400;
+        }
+        
+        .item-dots { 
+            flex: 1; 
+            border-bottom: 1px dotted var(--divider); 
+            min-width: 30px; 
+            margin-bottom: 3px; 
+        }
+        
+        .item-price { 
+            color: var(--gold-light); 
+            font-size: 13px; 
+            font-weight: 500;
+            white-space: nowrap; 
+        }
+        
         .item-desc {
             font-family: 'Cormorant Garamond', serif;
-            font-style: elegante;
-            font-size: 15,5px;
-            color: color: var(--text-muted);
-            margin-bottom: 14px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 5px;
+            font-style: italic;
         }
 
-        .menu-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+        .menu-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 5px;
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
         .menu-table th {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gold);
-            padding: 10px 8px;
-            letter-spacing: 2px;
+            padding: 10px 6px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             border-bottom: 1px solid var(--divider);
         }
 
-        .menu-table td { font-size: 12px; color: var(--text); text-align: center; padding: 8px; border-bottom: 1px dotted rgba(42,42,42,0.5); }
-        .menu-table td:first-child { text-align: left; color: var(--white); }
+        .menu-table td { 
+            font-size: 12px; 
+            color: var(--text); 
+            text-align: center; 
+            padding: 8px 4px; 
+            border-bottom: 1px dotted rgba(42,42,42,0.5); 
+        }
+        
+        .menu-table td:first-child { 
+            text-align: left; 
+            color: var(--white);
+            font-weight: 400;
+        }
 
-        .combo-group { margin-bottom: 20px; }
+        .combo-group { 
+            margin-bottom: 25px; 
+        }
+        
         .combo-group-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
+            font-size: 13px;
             font-style: italic;
             color: var(--gold);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            border-left: 2px solid var(--gold);
+            padding-left: 10px;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin: 15px 0 8px;
+            text-transform: uppercase;
         }
 
         .essencias {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             color: var(--text-muted);
-            font-size: 12px;
+            font-size: 11px;
             text-align: center;
             margin-top: 8px;
+            line-height: 1.4;
         }
 
         .footer {
@@ -198,23 +258,64 @@
             padding-top: 25px;
             border-top: 1px solid var(--divider);
             text-align: center;
-            font-size: 9px;
+            font-size: 8px;
             color: var(--text-muted);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .nav-top { text-align: right; margin-bottom: 15px; }
-        .nav-top a { color: var(--text-muted); text-decoration: none; font-size: 9px; letter-spacing: 2px; }
+        .nav-top { 
+            text-align: right; 
+            margin-bottom: 20px;
+        }
+        
+        .nav-top a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            font-size: 9px; 
+            letter-spacing: 2px;
+            background: rgba(200, 169, 110, 0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 25px 15px 20px;
+            }
+            
+            .item-name {
+                font-size: 13px;
+                min-width: 130px;
+            }
+            
+            .item-price {
+                font-size: 12px;
+            }
+            
+            .item-desc {
+                font-size: 11px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+            
+            .combo-group-title {
+                font-size: 12px;
+            }
+            
+            .menu-table th, .menu-table td {
+                font-size: 10px;
+                padding: 6px 3px;
+            }
+        }
 
         @media print {
             body { background: #0d0d0d; -webkit-print-color-adjust: exact; }
             .page { padding: 40px 45px 30px; max-width: 100%; }
-        }
-
-        @media screen and (max-width: 600px) {
-            .page { padding: 30px 20px 25px; }
-            .item-dots { display: none; }
         }
     </style>
 </head>
@@ -224,19 +325,19 @@
         <div class="header">
             <div class="logo-container">
                 <img src="https://i.postimg.cc/3wZw0Twr/logo.png" alt="Sublime Bar Logo" class="logo-new">
-            
+            </div>
         </div>
 
         <nav class="index">
-            <a href="#drinks-autor">Drinks de Autor</a> <span>·</span>
-            <a href="#classicos">Clássicos</a> <span>·</span>
-            <a href="#caipirinhas">Caipirinhas</a> <span>·</span>
-            <a href="#copao">Copão Amigo</a> <span>·</span>
-            <a href="#cervejas">Cervejas</a> <span>·</span>
-            <a href="#doses-shots">Doses & Shots</a> <span>·</span>
-            <a href="#combos">Combos</a> <span>·</span>
-            <a href="#petiscos">Petiscos</a> <span>·</span>
-            <a href="#narguile">Narguilé</a> <span>·</span>
+            <a href="#drinks-autor">Drinks</a>
+            <a href="#classicos">Clássicos</a>
+            <a href="#caipirinhas">Caipirinhas</a>
+            <a href="#doses-shots">Doses</a>
+            <a href="#copao">Copão</a>
+            <a href="#cervejas">Cervejas</a>
+            <a href="#combos">Combos</a>
+            <a href="#petiscos">Petiscos</a>
+            <a href="#narguile">Narguilé</a>
             <a href="#bebidas">Bebidas</a>
         </nav>
 
@@ -293,27 +394,20 @@
                 <span class="item-price">00,00</span>
             </div>
             <div class="item-desc">Cachaça, limão, açúcar, Corona</div>
-          
-          
+        </div>
 
-          
-        <!-- CLÁSSICOS & VARIAÇÕES -->
         <div class="section" id="classicos">
             <div class="section-title">Clássicos & Variações</div>
             <div class="divider"></div>
 
-        
-
-<div class="item">
-    <span class="item-name">Aperol Spritz</span>
-    <span class="item-dots"></span>
-    <span class="item-price">00,00</span>
-</div>
-<div class="item-desc" style="margin-bottom: 7px;">
-    Aperol, espumante, água com gás, laranja
-</div>
+            <div class="item">
+                <span class="item-name">Aperol Spritz</span>
+                <span class="item-dots"></span>
+                <span class="item-price">00,00</span>
+            </div>
+            <div class="item-desc">Aperol, espumante, água com gás, laranja</div>
           
-          <div class="item">
+            <div class="item">
                 <span class="item-name">Gin Tônica Clássico</span>
                 <span class="item-dots"></span>
                 <span class="item-price">00,00</span>
@@ -335,7 +429,6 @@
             <div class="item-desc">Gin Tanqueray, morango, Red Bull Melancia</div>
         </div>
 
-        <!-- CAIPIRINHAS -->
         <div class="section" id="caipirinhas">
             <div class="section-title">Caipirinhas</div>
             <div class="section-subtitle">Escolha sua base</div>
@@ -350,41 +443,115 @@
                 </tr>
                 <tr>
                     <td>Limão</td>
+                    <td>23,99</td>
                     <td>25,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>24,99</td>
                 </tr>
                 <tr>
                     <td>Limão com Morango</td>
+                    <td>23,99</td>
                     <td>25,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>24,99</td>
                 </tr>
                 <tr>
                     <td>Morango</td>
+                    <td>23,99</td>
                     <td>25,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>24,99</td>
                 </tr>
                 <tr>
                     <td>Maracujá</td>
+                    <td>25,99</td>
                     <td>27,99</td>
-                    <td>29,99</td>
-                    <td>28,99</td>
+                    <td>26,99</td>
                 </tr>
             </table>
         </div>
 
-        
+        <!-- DOSES & SHOTS - Movido para depois de Caipirinhas -->
+        <div class="section" id="doses-shots">
+            <div class="section-title">Doses</div>
+            <div class="section-subtitle">150ml</div>
+            <div class="divider"></div>
 
-    <!-- ============ PÁGINA 2 ============ -->
-    <div class="page">
+            <div class="item">
+                <span class="item-name">Gin Beefeater</span>
+                <span class="item-dots"></span>
+                <span class="item-price">39,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Gin Beefeater Pink</span>
+                <span class="item-dots"></span>
+                <span class="item-price">41,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Vodka Smirnoff</span>
+                <span class="item-dots"></span>
+                <span class="item-price">20,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Jack Daniel's</span>
+                <span class="item-dots"></span>
+                <span class="item-price">36,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Jack Daniel's Apple</span>
+                <span class="item-dots"></span>
+                <span class="item-price">38,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Johnnie Walker Black Label</span>
+                <span class="item-dots"></span>
+                <span class="item-price">41,00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Johnnie Walker Double Black</span>
+                <span class="item-dots"></span>
+                <span class="item-price">54,00</span>
+            </div>
+            <div class="item-desc" style="text-align:center; margin: 10px 0;">Adicione Red Bull à sua dose · +17,00</div>
+
+            <div class="section-label">Shots</div>
+            <div class="item">
+                <span class="item-name">Ballena</span>
+                <span class="item-dots"></span>
+                <span class="item-price">—</span>
+            </div>
+            <div class="item-desc">Licor creme de morango</div>
+            <div class="item">
+                <span class="item-name">Tequila</span>
+                <span class="item-dots"></span>
+                <span class="item-price">—</span>
+            </div>
+            <div class="item-desc">Sal e limão</div>
+            <div class="item">
+                <span class="item-name">Canelinha da Rocha</span>
+                <span class="item-dots"></span>
+                <span class="item-price">—</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Bananazinha</span>
+                <span class="item-dots"></span>
+                <span class="item-price">—</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Licor 43</span>
+                <span class="item-dots"></span>
+                <span class="item-price">—</span>
+            </div>
+        </div>
 
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
+    </div>
 
-        <!-- COPÃO AMIGO -->
+    <!-- PÁGINA 2 -->
+    <div class="page">
+        <div class="nav-top">
+            <a href="#topo">↑ Topo</a>
+        </div>
+
         <div class="section" id="copao">
             <div class="section-title">Copão Amigo</div>
             <div class="section-subtitle">700ml · Gelado, intenso · Escolha base e sabor</div>
@@ -424,13 +591,11 @@
             </table>
         </div>
 
-        <!-- CERVEJAS -->
         <div class="section" id="cervejas">
             <div class="section-title">Cervejas</div>
             <div class="divider"></div>
 
             <div class="section-label">600ml</div>
-
             <div class="item">
                 <span class="item-name">Heineken</span>
                 <span class="item-dots"></span>
@@ -446,14 +611,13 @@
                 <span class="item-dots"></span>
                 <span class="item-price">16,00</span>
             </div>
-            <div class="item" style="margin-bottom:18px;">
+            <div class="item">
                 <span class="item-name">Amstel</span>
                 <span class="item-dots"></span>
                 <span class="item-price">15,00</span>
             </div>
 
             <div class="section-label">Long Neck</div>
-
             <div class="item">
                 <span class="item-name">Corona</span>
                 <span class="item-dots"></span>
@@ -476,97 +640,17 @@
             </div>
         </div>
 
-        <!-- DOSES & SHOTS -->
-        <div class="section" id="doses-shots">
-            <div class="section-title">Doses</div>
-            <div class="section-subtitle">150ml</div>
-            <div class="divider"></div>
-
-            <div class="item">
-                <span class="item-name">Gin Beefeater</span>
-                <span class="item-dots"></span>
-                <span class="item-price">39,00</span>
-            </div>
-            <div class="item">
-                <span class="item-name">Gin Beefeater Pink</span>
-                <span class="item-dots"></span>
-                <span class="item-price">41,00</span>
-            </div>
-            <div class="item">
-                <span class="item-name">Vodka Smirnoff</span>
-                <span class="item-dots"></span>
-                <span class="item-price">20,00</span>
-            </div>
-            <div class="item">
-                <span class="item-name">Jack Daniel's</span>
-                <span class="item-dots"></span>
-                <span class="item-price">36,00</span>
-            </div>
-            <div class="item">
-                <span class="item-name">Jack Daniel's Apple</span>
-                <span class="item-dots"></span>
-                <span class="item-price">38,00</span>
-            </div>
-            <div class="item">
-                <span class="item-name">Johnnie Walker Black Label</span>
-                <span class="item-dots"></span>
-                <span class="item-price">41,00</span>
-            </div>
-            <div class="item" style="margin-bottom:18px;">
-                <span class="item-name">Johnnie Walker Double Black</span>
-                <span class="item-dots"></span>
-                <span class="item-price">54,00</span>
-            </div>
-            <div class="item-desc" style="text-align:center;">Adicione Red Bull à sua dose · +17,00</div>
-
-            <div class="section-label" style="margin-top:22px;">Shots</div>
-
-            <div class="item">
-                <span class="item-name">Ballena</span>
-                <span class="item-dots"></span>
-                <span class="item-price"></span>
-            </div>
-            <div class="item-desc">Licor creme de morango</div>
-
-            <div class="item">
-                <span class="item-name">Tequila</span>
-                <span class="item-dots"></span>
-                <span class="item-price"></span>
-            </div>
-            <div class="item-desc">Sal e limão</div>
-
-            <div class="item">
-                <span class="item-name">Canelinha da Rocha</span>
-                <span class="item-dots"></span>
-                <span class="item-price"></span>
-            </div>
-
-            <div class="item">
-                <span class="item-name">Bananazinha</span>
-                <span class="item-dots"></span>
-                <span class="item-price"></span>
-            </div>
-
-            <div class="item">
-                <span class="item-name">Licor 43</span>
-                <span class="item-dots"></span>
-                <span class="item-price"></span>
-            </div>
-        </div>
-
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 3 ============ -->
+    <!-- PÁGINA 3 - COMBOS (ATUALIZADO) -->
     <div class="page">
-
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
 
-        <!-- COMBOS -->
         <div class="section" id="combos">
             <div class="section-title">Combos</div>
             <div class="section-subtitle">Para compartilhar · Gin e Vodka acompanham bandeja de frutas e gelo saborizado</div>
@@ -620,8 +704,9 @@
                 </div>
             </div>
 
+            <!-- COMBO DE WHISKY SEPARADO -->
             <div class="combo-group">
-                <div class="combo-group-title">Whisky & Vodka + Energético</div>
+                <div class="combo-group-title">Whisky + Energético</div>
                 <div class="item">
                     <span class="item-name">Jack Daniel's + 5 Energéticos</span>
                     <span class="item-dots"></span>
@@ -642,6 +727,11 @@
                     <span class="item-dots"></span>
                     <span class="item-price">455,00</span>
                 </div>
+            </div>
+
+            <!-- COMBO DE VODKA SEPARADO COM NOVO ITEM GREY GOOSE -->
+            <div class="combo-group">
+                <div class="combo-group-title">Vodka + Energético</div>
                 <div class="item">
                     <span class="item-name">Vodka Smirnoff + 5 Energéticos</span>
                     <span class="item-dots"></span>
@@ -652,6 +742,11 @@
                     <span class="item-dots"></span>
                     <span class="item-price">105,00</span>
                 </div>
+                <div class="item">
+                    <span class="item-name">Grey Goose + 5 Energéticos</span>
+                    <span class="item-dots"></span>
+                    <span class="item-price">399,00</span>
+                </div>
             </div>
         </div>
 
@@ -660,14 +755,12 @@
         </div>
     </div>
 
-    <!-- ============ PÁGINA 4 ============ -->
+    <!-- PÁGINA 4 - PETISCOS, NARGUILÉ E BEBIDAS -->
     <div class="page">
-
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
 
-        <!-- PETISCOS -->
         <div class="section" id="petiscos">
             <div class="section-title">Para Beliscar</div>
             <div class="divider"></div>
@@ -701,25 +794,18 @@
             <div class="item-desc">6 unidades crocantes, recheio artesanal. Molho especial.</div>
 
             <div class="item">
-                <span class="item-name">Mini Pastel de Carne</span>
+                <span class="item-name">Chicken Bites</span>
                 <span class="item-dots"></span>
-                <span class="item-price">35,00</span>
+                <span class="item-price">40,00</span>
             </div>
-            <div class="item-desc">8 unidades artesanais.</div>
+            <div class="item-desc">500g de pedaços de frango empanados, dourados e crocantes. Acompanha molho sweet chilli.</div>
 
             <div class="item">
-                <span class="item-name">Mini Pastel de Queijo</span>
-                <span class="item-dots"></span>
-                <span class="item-price">35,00</span>
-            </div>
-            <div class="item-desc">8 unidades artesanais.</div>
-
-            <div class="item">
-                <span class="item-name">Mini Pastel de Carne com Queijo</span>
+                <span class="item-name">Meia Batata e Meia Chicken Bites</span>
                 <span class="item-dots"></span>
                 <span class="item-price">38,00</span>
             </div>
-            <div class="item-desc">8 unidades artesanais.</div>
+            <div class="item-desc">500g de pedaços de frango empanados e 500g de batatas fritas. Acompanha molho sweet chilli.</div>
 
             <div class="item">
                 <span class="item-name">Calabresa Acebolada</span>
@@ -736,7 +822,6 @@
             <div class="item-desc">Fritas + calabresa acebolada.</div>
         </div>
 
-        <!-- NARGUILÉ -->
         <div class="section" id="narguile">
             <div class="section-title">Narguilé</div>
             <div class="divider"></div>
@@ -746,11 +831,10 @@
                 <span class="item-price">30,00</span>
             </div>
             <div class="essencias">
-                Morango e Laranja &nbsp;·&nbsp; Tutti Frutti &nbsp;·&nbsp; Duas Maçãs &nbsp;·&nbsp; Frutas Roxas &nbsp;·&nbsp; Frutas Verdes &nbsp;·&nbsp; Melancia &nbsp;·&nbsp; Fresh Passion &nbsp;·&nbsp; Yellow &nbsp;·&nbsp; Menta
+                Morango e Laranja · Tutti Frutti · Duas Maçãs · Frutas Roxas · Frutas Verdes · Melancia · Fresh Passion · Yellow · Menta
             </div>
         </div>
 
-        <!-- BEBIDAS -->
         <div class="section" id="bebidas">
             <div class="section-title">Bebidas</div>
             <div class="divider"></div>
@@ -797,14 +881,16 @@
                 <span class="item-dots"></span>
                 <span class="item-price">16,00</span>
             </div>
+            <!-- NOVA BEBIDA XEQUE MATE -->
+            <div class="item">
+                <span class="item-name">Xeque Mate</span>
+                <span class="item-dots"></span>
+                <span class="item-price">20,00</span>
+            </div>
         </div>
 
-        <!-- Rodapé -->
         <div class="footer">
-            <div class="footer-diamond"></div>
-            Consumo consciente.<br>
-            <br><br>
-            
+            Consumo consciente.
         </div>
 
         <div class="nav-top" style="margin-top:20px;">
@@ -813,8 +899,4 @@
     </div>
 
 </body>
-</html>
-    
-  </body>
-  
 </html>
