@@ -133,13 +133,15 @@
             flex-wrap: wrap;
         }
 
+        /* CORREÇÃO: Impede que o nome do item quebre de forma feia */
         .item-name { 
             color: var(--white); 
             font-size: 15px; 
             flex: 1; 
-            min-width: 160px;
+            min-width: 140px;
             font-weight: 500;
             letter-spacing: -0.2px;
+            white-space: nowrap; /* Impede a quebra em telas maiores */
         }
         
         .item-dots { 
@@ -305,9 +307,18 @@
                 padding: 25px 15px 20px;
             }
             
+            /* CORREÇÃO PARA MOBILE: Permite quebra controlada e reduz tamanho da fonte */
             .item-name {
-                font-size: 14px;
-                min-width: 130px;
+                font-size: 13px;
+                min-width: 120px;
+                white-space: normal; /* Permite quebrar em mobile */
+                word-break: keep-all; /* Evita quebras agressivas */
+            }
+            
+            /* Ajuste específico para itens com "Serenata" */
+            .item-name[class*="Serenata"] {
+                font-size: 12px;
+                letter-spacing: -0.3px;
             }
             
             .item-price {
@@ -336,6 +347,26 @@
             .copao-table td {
                 font-size: 13px;
                 padding: 8px 0;
+            }
+        }
+
+        /* Para telas muito pequenas (ex: iPhone SE, Galaxy Fold) */
+        @media (max-width: 380px) {
+            .item-name {
+                font-size: 12px;
+                min-width: 100px;
+            }
+            
+            .item-price {
+                font-size: 12px;
+            }
+            
+            .item-dots {
+                display: none; /* Remove os pontinhos em telas muito pequenas para ganhar espaço */
+            }
+            
+            .item {
+                justify-content: space-between;
             }
         }
 
@@ -662,7 +693,7 @@
             </table>
         </div>
 
-        <!-- PETISCOS - AGORA VEM ANTES DOS COMBOS -->
+        <!-- PETISCOS -->
         <div class="section" id="petiscos">
             <div class="section-title">Petiscos</div>
             <div class="section-subtitle">Para compartilhar</div>
@@ -730,9 +761,8 @@
         </div>
     </div>
 
-    <!-- PÁGINA 3 - COMBOS E BEBIDAS -->
+    <!-- PÁGINA 3 - COMBOS -->
     <div class="page">
-        <!-- COMBOS -->
         <div class="section" id="combos">
             <div class="section-title">Combos</div>
             <div class="section-subtitle">Experiências completas</div>
@@ -820,7 +850,7 @@
         </div>
     </div>
 
-    <!-- PÁGINA 4 - BEBIDAS NÃO ALCOÓLICAS E NARGUILÉ -->
+    <!-- PÁGINA 4 - BEBIDAS E NARGUILÉ -->
     <div class="page">
         <!-- BEBIDAS NÃO ALCOÓLICAS -->
         <div class="section" id="bebidas">
@@ -878,7 +908,7 @@
             <div class="item-desc">Servido em copo de 500ml com gelo e limão</div>
         </div>
 
-        <!-- NARGUILÉ - ÚLTIMO (SEM O TEXTO DO CARVÃO) -->
+        <!-- NARGUILÉ -->
         <div class="section" id="narguile">
             <div class="section-title">Narguilé</div>
             <div class="section-subtitle">Momento de relaxar</div>
@@ -888,7 +918,6 @@
                 <span class="item-dots"></span>
                 <span class="item-price">30,00</span>
             </div>
-            <!-- Texto "Carvão incluso..." removido conforme solicitado -->
             <div class="essencias">
                 🍓 Morango & Laranja · 🍬 Tutti Frutti · 🍎 Duas Maçãs · 🍇 Frutas Roxas · 🍏 Frutas Verdes · 🍉 Melancia · 🌿 Fresh Passion · 🍋 Yellow · 🌱 Menta
             </div>
@@ -903,7 +932,5 @@
         </div>
     </div>
 
-</body>
-</html>
 </body>
 </html>
