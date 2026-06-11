@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Sublime Bar — Cardápio Mobile</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap');
+        /* FONTES MAIS LEGÍVEIS E MODERNAS */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap');
 
         :root {
             --bg: #000000;
@@ -13,7 +14,7 @@
             --gold: #c8a96e;
             --gold-light: #d4bb82;
             --text: #e6e6e6;
-            --text-muted: #9a9a9a;
+            --text-muted: #b0b0b0;
             --divider: #2a2a2a;
             --white: #f5f5f5;
         }
@@ -27,7 +28,7 @@
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 300;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
@@ -71,7 +72,7 @@
         .index a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: color 0.3s;
@@ -83,31 +84,32 @@
         @media (max-width: 550px) {
             .index a {
                 background: rgba(200, 169, 110, 0.1);
-                padding: 4px 10px;
+                padding: 5px 12px;
                 border-radius: 20px;
-                font-size: 8px;
+                font-size: 9px;
             }
         }
 
         .section { 
-            margin-bottom: 40px; 
+            margin-bottom: 45px; 
             page-break-inside: avoid; 
         }
         
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
             color: var(--gold);
             text-align: center;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-top: 30px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .section-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
             font-style: italic;
             color: var(--text-muted);
             text-align: center;
@@ -115,10 +117,10 @@
         }
 
         .divider {
-            width: 40px;
+            width: 50px;
             height: 1px;
             background: var(--gold);
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             opacity: 0.6;
         }
 
@@ -126,40 +128,43 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 6px;
-            gap: 10px;
+            margin-bottom: 8px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .item-name { 
             color: var(--white); 
-            font-size: 14px; 
+            font-size: 15px; 
             flex: 1; 
             min-width: 160px;
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: -0.2px;
         }
         
         .item-dots { 
             flex: 1; 
             border-bottom: 1px dotted var(--divider); 
             min-width: 30px; 
-            margin-bottom: 3px; 
+            margin-bottom: 4px; 
         }
         
         .item-price { 
             color: var(--gold-light); 
-            font-size: 13px; 
-            font-weight: 500;
+            font-size: 14px; 
+            font-weight: 600;
             white-space: nowrap; 
         }
         
+        /* DESCRIÇÕES MAIORES E MAIS LEGÍVEIS */
         .item-desc {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 12px;
-            padding-left: 5px;
-            font-style: italic;
+            margin-bottom: 14px;
+            padding-left: 8px;
+            font-weight: 400;
+            line-height: 1.45;
         }
 
         .menu-table { 
@@ -172,60 +177,85 @@
         }
         
         .menu-table th {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--gold);
-            padding: 10px 6px;
+            padding: 12px 6px;
             letter-spacing: 1px;
             text-transform: uppercase;
             border-bottom: 1px solid var(--divider);
+            font-weight: 600;
         }
 
         .menu-table td { 
-            font-size: 12px; 
+            font-size: 13px; 
             color: var(--text); 
             text-align: center; 
-            padding: 8px 4px; 
+            padding: 10px 4px; 
             border-bottom: 1px dotted rgba(42,42,42,0.5); 
+            font-weight: 400;
         }
         
         .menu-table td:first-child { 
             text-align: left; 
             color: var(--white);
-            font-weight: 400;
+            font-weight: 500;
+        }
+
+        /* Estilo específico para a tabela simplificada do Copão */
+        .copao-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .copao-table td {
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--white);
+            font-weight: 500;
+            border-bottom: 1px dotted rgba(42,42,42,0.3);
+        }
+        
+        .copao-table td:last-child {
+            text-align: right;
+            color: var(--gold-light);
+            font-weight: 600;
         }
 
         .combo-group { 
-            margin-bottom: 25px; 
+            margin-bottom: 28px; 
         }
         
         .combo-group-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 13px;
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
             font-style: italic;
             color: var(--gold);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             border-left: 2px solid var(--gold);
-            padding-left: 10px;
+            padding-left: 12px;
+            font-weight: 500;
         }
 
         .section-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
             letter-spacing: 2px;
             color: var(--gold);
-            margin: 15px 0 8px;
+            margin: 18px 0 10px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         .essencias {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
+            font-family: 'Inter', sans-serif;
             color: var(--text-muted);
-            font-size: 11px;
+            font-size: 12px;
             text-align: center;
-            margin-top: 8px;
-            line-height: 1.4;
+            margin-top: 10px;
+            line-height: 1.5;
+            font-weight: 400;
         }
 
         .footer {
@@ -233,7 +263,7 @@
             padding-top: 25px;
             border-top: 1px solid var(--divider);
             text-align: center;
-            font-size: 8px;
+            font-size: 9px;
             color: var(--text-muted);
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -248,12 +278,26 @@
         .nav-top a { 
             color: var(--text-muted); 
             text-decoration: none; 
-            font-size: 9px; 
+            font-size: 10px; 
             letter-spacing: 2px;
             background: rgba(200, 169, 110, 0.15);
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             display: inline-block;
+            font-weight: 400;
+        }
+
+        .preco-unico {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold-light);
+            background: rgba(200, 169, 110, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 480px) {
@@ -262,30 +306,36 @@
             }
             
             .item-name {
-                font-size: 13px;
+                font-size: 14px;
                 min-width: 130px;
             }
             
             .item-price {
-                font-size: 12px;
+                font-size: 13px;
             }
             
             .item-desc {
-                font-size: 11px;
+                font-size: 12px;
+                margin-bottom: 12px;
             }
             
             .section-title {
-                font-size: 18px;
+                font-size: 20px;
                 letter-spacing: 3px;
             }
             
             .combo-group-title {
-                font-size: 12px;
+                font-size: 13px;
             }
             
             .menu-table th, .menu-table td {
-                font-size: 10px;
-                padding: 6px 3px;
+                font-size: 11px;
+                padding: 8px 3px;
+            }
+            
+            .copao-table td {
+                font-size: 13px;
+                padding: 8px 0;
             }
         }
 
@@ -305,6 +355,7 @@
             </div>
         </div>
 
+        <!-- NAVEGAÇÃO REORGANIZADA -->
         <nav class="index">
             <a href="#drinks-autor">Drinks</a>
             <a href="#classicos">Clássicos</a>
@@ -312,13 +363,13 @@
             <a href="#caipirinhas">Caipirinhas</a>
             <a href="#doses-shots">Doses</a>
             <a href="#copao">Copão</a>
-            <a href="#combos">Combos</a>
             <a href="#petiscos">Petiscos</a>
-            <a href="#narguile">Narguilé</a>
+            <a href="#combos">Combos</a>
             <a href="#bebidas">Bebidas</a>
+            <a href="#narguile">Narguilé</a>
         </nav>
 
-        <!-- DRINKS DE AUTOR - VALOR CORRETO: 32,00 -->
+        <!-- DRINKS DE AUTOR -->
         <div class="section" id="drinks-autor">
             <div class="section-title">Drinks de Autor</div>
             <div class="section-subtitle">Criações exclusivas da casa</div>
@@ -374,7 +425,7 @@
             <div class="item-desc">Cachaça, limão, açúcar, Corona</div>
         </div>
 
-        <!-- CLÁSSICOS - VALORES CORRETOS -->
+        <!-- CLÁSSICOS -->
         <div class="section" id="classicos">
             <div class="section-title">Clássicos & Variações</div>
             <div class="divider"></div>
@@ -408,7 +459,7 @@
             <div class="item-desc">Gin Tanqueray, morango, Red Bull Melancia</div>
         </div>
 
-        <!-- CERVEJAS - MANTIDAS SUAS ALTERAÇÕES (Corona Zero incluída, Budweiser 600ml removida) -->
+        <!-- CERVEJAS -->
         <div class="section" id="cervejas">
             <div class="section-title">Cervejas</div>
             <div class="divider"></div>
@@ -453,7 +504,7 @@
             </div>
         </div>
 
-        <!-- CAIPIRINHAS - VALORES CORRETOS -->
+        <!-- CAIPIRINHAS -->
         <div class="section" id="caipirinhas">
             <div class="section-title">Caipirinhas</div>
             <div class="section-subtitle">Escolha sua base</div>
@@ -493,7 +544,7 @@
             </table>
         </div>
 
-        <!-- DOSES E SHOTS - COM VALORES DOS SHOTS CORRETOS -->
+        <!-- DOSES E SHOTS -->
         <div class="section" id="doses-shots">
             <div class="section-title">Doses</div>
             <div class="section-subtitle">150ml</div>
@@ -534,7 +585,7 @@
                 <span class="item-dots"></span>
                 <span class="item-price">54,00</span>
             </div>
-            <div class="item-desc" style="text-align:center; margin: 10px 0;">Adicione Red Bull à sua dose · +17,00</div>
+            <div class="item-desc" style="text-align:center; margin: 12px 0;">✨ Adicione Red Bull à sua dose · +17,00 ✨</div>
 
             <div class="section-label">Shots</div>
             <div class="item">
@@ -542,7 +593,7 @@
                 <span class="item-dots"></span>
                 <span class="item-price">26,00</span>
             </div>
-            <div class="item-desc">Licor cremoso de tequila mexicana com creme de morango.</div>
+            <div class="item-desc">Licor cremoso de tequila mexicana com creme de morango</div>
             
             <div class="item">
                 <span class="item-name">Tequila</span>
@@ -570,69 +621,125 @@
             </div>
         </div>
 
-        <!-- TOPO PÁGINA 1 -->
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
     </div>
 
-    <!-- PÁGINA 2 -->
+    <!-- PÁGINA 2 - COPÃO E PETISCOS -->
     <div class="page">
-        <!-- COPÃO AMIGO - VALOR CORRETO: 28,00 -->
+        <!-- COPÃO AMIGO - SIMPLIFICADO -->
         <div class="section" id="copao">
             <div class="section-title">Copão Amigo</div>
             <div class="section-subtitle">700ml · Gelado, intenso · Escolha base e sabor</div>
             <div class="divider"></div>
+            
+            <div style="text-align: center;">
+                <span class="preco-unico">Todos os sabores · R$ 28,00</span>
+            </div>
 
-            <table class="menu-table">
-                <tr>
-                    <th>Sabor</th>
-                    <th>Gin</th>
-                    <th>Vodka</th>
-                </tr>
+            <table class="copao-table">
                 <tr>
                     <td>Tropical</td>
-                    <td>28,00</td>
-                    <td>28,00</td>
+                    <td>Gin / Vodka</td>
                 </tr>
                 <tr>
                     <td>Frutas Vermelhas</td>
-                    <td>28,00</td>
-                    <td>28,00</td>
+                    <td>Gin / Vodka</td>
                 </tr>
                 <tr>
                     <td>Maçã Verde</td>
-                    <td>28,00</td>
-                    <td>28,00</td>
+                    <td>Gin / Vodka</td>
                 </tr>
                 <tr>
                     <td>Coco com Açaí</td>
-                    <td>28,00</td>
-                    <td>28,00</td>
+                    <td>Gin / Vodka</td>
                 </tr>
                 <tr>
                     <td>Abacaxi com Hortelã</td>
-                    <td>28,00</td>
-                    <td>28,00</td>
+                    <td>Gin / Vodka</td>
                 </tr>
             </table>
         </div>
 
-        <!-- TOPO PÁGINA 2 -->
+        <!-- PETISCOS - AGORA VEM ANTES DOS COMBOS -->
+        <div class="section" id="petiscos">
+            <div class="section-title">Petiscos</div>
+            <div class="section-subtitle">Para compartilhar</div>
+            <div class="divider"></div>
+
+            <div class="item">
+                <span class="item-name">Batata Frita da Casa</span>
+                <span class="item-dots"></span>
+                <span class="item-price">30,00</span>
+            </div>
+            <div class="item-desc">Fininhas e crocantes. Acompanha molho especial da casa.</div>
+
+            <div class="item">
+                <span class="item-name">Dadinho de Tapioca</span>
+                <span class="item-dots"></span>
+                <span class="item-price">35,00</span>
+            </div>
+            <div class="item-desc">250g · Crocante por fora, macio por dentro. Acompanha sweet chilli.</div>
+
+            <div class="item">
+                <span class="item-name">Coxinha Sem Massa</span>
+                <span class="item-dots"></span>
+                <span class="item-price">35,00</span>
+            </div>
+            <div class="item-desc">6 unidades 100% frango desfiado, suculentas. Molho especial.</div>
+
+            <div class="item">
+                <span class="item-name">Bolinho de Pulled Pork</span>
+                <span class="item-dots"></span>
+                <span class="item-price">38,00</span>
+            </div>
+            <div class="item-desc">6 unidades crocantes com recheio artesanal de pulled pork. Molho especial.</div>
+
+            <div class="item">
+                <span class="item-name">Chicken Bites</span>
+                <span class="item-dots"></span>
+                <span class="item-price">40,00</span>
+            </div>
+            <div class="item-desc">500g de frango empanado, dourado e crocante. Acompanha sweet chilli.</div>
+
+            <div class="item">
+                <span class="item-name">Meia Batata + Meia Chicken</span>
+                <span class="item-dots"></span>
+                <span class="item-price">38,00</span>
+            </div>
+            <div class="item-desc">500g de frango empanado + 500g de batatas fritas. Acompanha sweet chilli.</div>
+
+            <div class="item">
+                <span class="item-name">Calabresa Acebolada</span>
+                <span class="item-dots"></span>
+                <span class="item-price">38,00</span>
+            </div>
+            <div class="item-desc">Calabresa grelhada com cebola salteada e vinagrete da casa.</div>
+
+            <div class="item">
+                <span class="item-name">Porção Mista</span>
+                <span class="item-dots"></span>
+                <span class="item-price">38,00</span>
+            </div>
+            <div class="item-desc">Fritas crocantes + calabresa acebolada. O melhor dos dois mundos.</div>
+        </div>
+
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
     </div>
 
-    <!-- PÁGINA 3 - COMBOS -->
+    <!-- PÁGINA 3 - COMBOS E BEBIDAS -->
     <div class="page">
+        <!-- COMBOS -->
         <div class="section" id="combos">
             <div class="section-title">Combos</div>
-            <div class="section-subtitle">Para compartilhar</div>
+            <div class="section-subtitle">Experiências completas</div>
             <div class="divider"></div>
 
             <div class="combo-group">
-                <div class="combo-group-title">Gin + Energético + Bandeja de frutas</div>
+                <div class="combo-group-title">🍸 Gin + Energético + Bandeja de frutas</div>
                 <div class="item">
                     <span class="item-name">Tanqueray London + 4 Red Bull</span>
                     <span class="item-dots"></span>
@@ -651,7 +758,7 @@
             </div>
 
             <div class="combo-group">
-                <div class="combo-group-title">Gin + Tônica + Bandeja de frutas</div>
+                <div class="combo-group-title">🍸 Gin + Tônica + Bandeja de frutas</div>
                 <div class="item">
                     <span class="item-name">Tanqueray London + 4 Tônicas</span>
                     <span class="item-dots"></span>
@@ -670,7 +777,7 @@
             </div>
 
             <div class="combo-group">
-                <div class="combo-group-title">Whisky + Energético + Gelo saborizado</div>
+                <div class="combo-group-title">🥃 Whisky + Energético + Gelo saborizado</div>
                 <div class="item">
                     <span class="item-name">Jack Daniel's + 5 Energéticos</span>
                     <span class="item-dots"></span>
@@ -689,7 +796,7 @@
             </div>
 
             <div class="combo-group">
-                <div class="combo-group-title">Vodka + Energético + Bandeja de frutas + Gelo saborizado</div>
+                <div class="combo-group-title">🍹 Vodka + Energético + Bandeja de frutas + Gelo saborizado</div>
                 <div class="item">
                     <span class="item-name">Grey Goose + 5 Energéticos</span>
                     <span class="item-dots"></span>
@@ -708,94 +815,21 @@
             </div>
         </div>
 
-        <!-- TOPO PÁGINA 3 -->
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
     </div>
 
-    <!-- PÁGINA 4 - PETISCOS, NARGUILÉ E BEBIDAS -->
+    <!-- PÁGINA 4 - BEBIDAS NÃO ALCOÓLICAS E NARGUILÉ -->
     <div class="page">
-        <div class="section" id="petiscos">
-            <div class="section-title">Para Beliscar</div>
-            <div class="divider"></div>
-
-            <div class="item">
-                <span class="item-name">Batata Frita da Casa</span>
-                <span class="item-dots"></span>
-                <span class="item-price">30,00</span>
-            </div>
-            <div class="item-desc">Fininhas e crocantes. Molho especial.</div>
-
-            <div class="item">
-                <span class="item-name">Dadinho de Tapioca</span>
-                <span class="item-dots"></span>
-                <span class="item-price">35,00</span>
-            </div>
-            <div class="item-desc">250g. Crocante por fora, macio por dentro + Sweet chilli.</div>
-
-            <div class="item">
-                <span class="item-name">Coxinha Sem Massa</span>
-                <span class="item-dots"></span>
-                <span class="item-price">35,00</span>
-            </div>
-            <div class="item-desc">6 unidades 100% frango. Suculentas. Molho especial.</div>
-
-            <div class="item">
-                <span class="item-name">Bolinho de Pulled Pork</span>
-                <span class="item-dots"></span>
-                <span class="item-price">38,00</span>
-            </div>
-            <div class="item-desc">6 unidades crocantes, recheio artesanal. Molho especial.</div>
-
-            <div class="item">
-                <span class="item-name">Chicken Bites</span>
-                <span class="item-dots"></span>
-                <span class="item-price">40,00</span>
-            </div>
-            <div class="item-desc">500g de pedaços de frango empanados, dourados e crocantes. Acompanha molho sweet chilli.</div>
-
-            <div class="item">
-                <span class="item-name">Meia Batata e Meia Chicken Bites</span>
-                <span class="item-dots"></span>
-                <span class="item-price">38,00</span>
-            </div>
-            <div class="item-desc">500g de pedaços de frango empanados e 500g de batatas fritas. Acompanha molho sweet chilli.</div>
-
-            <div class="item">
-                <span class="item-name">Calabresa Acebolada</span>
-                <span class="item-dots"></span>
-                <span class="item-price">38,00</span>
-            </div>
-            <div class="item-desc">Grelhada, cebola salteada, vinagrete.</div>
-
-            <div class="item">
-                <span class="item-name">Porção Mista</span>
-                <span class="item-dots"></span>
-                <span class="item-price">38,00</span>
-            </div>
-            <div class="item-desc">Fritas + calabresa acebolada.</div>
-        </div>
-
-        <div class="section" id="narguile">
-            <div class="section-title">Narguilé</div>
-            <div class="divider"></div>
-            <div class="item">
-                <span class="item-name">Sessão</span>
-                <span class="item-dots"></span>
-                <span class="item-price">30,00</span>
-            </div>
-            <div class="essencias">
-                Morango e Laranja · Tutti Frutti · Duas Maçãs · Frutas Roxas · Frutas Verdes · Melancia · Fresh Passion · Yellow · Menta
-            </div>
-        </div>
-
+        <!-- BEBIDAS NÃO ALCOÓLICAS -->
         <div class="section" id="bebidas">
             <div class="section-title">Bebidas</div>
+            <div class="section-subtitle">Refrescantes e energéticos</div>
             <div class="divider"></div>
 
             <div class="item">
-                <span class="item-name">Água</span>
+                <span class="item-name">Água Mineral</span>
                 <span class="item-dots"></span>
                 <span class="item-price">5,90</span>
             </div>
@@ -805,21 +839,22 @@
                 <span class="item-price">6,90</span>
             </div>
             <div class="item">
-                <span class="item-name">Tônica</span>
+                <span class="item-name">Água Tônica</span>
                 <span class="item-dots"></span>
                 <span class="item-price">7,50</span>
             </div>
-               <div class="item">
-                <span class="item-name">Del Valle Lata</span>
+            <div class="item">
+                <span class="item-name">Del Valle (Lata)</span>
                 <span class="item-dots"></span>
                 <span class="item-price">9,00</span>
             </div>
             <div class="item">
-                <span class="item-name">Refrigerante Lata</span>
+                <span class="item-name">Refrigerante (Lata)</span>
                 <span class="item-dots"></span>
                 <span class="item-price">8,00</span>
             </div>
             <div class="item-desc">Coca-Cola · Coca-Cola Zero · Guaraná · Guaraná Zero · Fanta Uva</div>
+            
             <div class="item">
                 <span class="item-name">Red Bull</span>
                 <span class="item-dots"></span>
@@ -840,18 +875,35 @@
                 <span class="item-dots"></span>
                 <span class="item-price">20,00</span>
             </div>
-            <div class="item-desc">Servido em copo de 500ml com gelo e limão.</div>
+            <div class="item-desc">Servido em copo de 500ml com gelo e limão</div>
+        </div>
+
+        <!-- NARGUILÉ - ÚLTIMO (SEM O TEXTO DO CARVÃO) -->
+        <div class="section" id="narguile">
+            <div class="section-title">Narguilé</div>
+            <div class="section-subtitle">Momento de relaxar</div>
+            <div class="divider"></div>
+            <div class="item">
+                <span class="item-name">Sessão completa</span>
+                <span class="item-dots"></span>
+                <span class="item-price">30,00</span>
+            </div>
+            <!-- Texto "Carvão incluso..." removido conforme solicitado -->
+            <div class="essencias">
+                🍓 Morango & Laranja · 🍬 Tutti Frutti · 🍎 Duas Maçãs · 🍇 Frutas Roxas · 🍏 Frutas Verdes · 🍉 Melancia · 🌿 Fresh Passion · 🍋 Yellow · 🌱 Menta
+            </div>
         </div>
 
         <div class="footer">
-            Consumo consciente.
+            🍸 Consumo consciente · Aprecie com moderação 🍸
         </div>
 
-        <!-- TOPO PÁGINA 4 -->
         <div class="nav-top">
             <a href="#topo">↑ Topo</a>
         </div>
     </div>
 
+</body>
+</html>
 </body>
 </html>
