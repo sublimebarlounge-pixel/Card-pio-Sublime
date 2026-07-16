@@ -17,6 +17,7 @@
             --text-muted: #b0b0b0;
             --divider: #2a2a2a;
             --white: #f5f5f5;
+            --highlight: #e8b84b;
         }
 
         * {
@@ -302,6 +303,39 @@
             margin-bottom: 20px;
         }
 
+        /* ===== NOVO ESTILO PARA O ADICIONAL DE SMIRNOFF ===== */
+        .caipirinha-obs {
+            background: rgba(200, 169, 110, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 12px 16px;
+            margin: 15px 0 5px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .caipirinha-obs strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .caipirinha-obs .destaque {
+            color: var(--highlight);
+            font-weight: 600;
+        }
+
+        .smirnoff-adicional {
+            display: inline-block;
+            background: rgba(232, 184, 75, 0.12);
+            border: 1px solid rgba(232, 184, 75, 0.2);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            color: var(--highlight);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
         @media (max-width: 480px) {
             .page {
                 padding: 25px 15px 20px;
@@ -347,6 +381,11 @@
             .copao-table td {
                 font-size: 13px;
                 padding: 8px 0;
+            }
+
+            .caipirinha-obs {
+                font-size: 11px;
+                padding: 10px 12px;
             }
         }
 
@@ -521,7 +560,7 @@
             <div class="item">
                 <span class="item-name">Corona Zero</span>
                 <span class="item-dots"></span>
-                <span class="item-price">13,99</span>
+                <span class="item-price">14,99</span>
             </div>
             <div class="item">
                 <span class="item-name">Heineken</span>
@@ -541,6 +580,18 @@
             <div class="section-subtitle">Escolha sua base</div>
             <div class="divider"></div>
 
+            <!-- ===== NOVA OBSERVAÇÃO SOBRE O ADICIONAL SMIRNOFF ===== -->
+            <div class="caipirinha-obs">
+                🍸 <strong>Caipirinha com Vodka Smirnoff</strong> · 
+                <span class="destaque">+ R$ 2,00</span>
+                <span class="smirnoff-adicional">Adicional</span>
+                <br>
+                <span style="font-size: 12px; opacity: 0.8;">
+                    Os valores da coluna <strong>Vodka</strong> já incluem vodka nacional. 
+                    Ao optar por <strong>Smirnoff</strong>, acrescente R$ 2,00.
+                </span>
+            </div>
+
             <table class="menu-table">
                 <tr>
                     <th></th>
@@ -551,28 +602,35 @@
                 <tr>
                     <td>Limão</td>
                     <td>29,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>31,99</td>
+                    <td>30,99</td>
                 </tr>
                 <tr>
                     <td>Limão com Morango</td>
-                    <td>25,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>29,99</td>
+                    <td>31,99</td>
+                    <td>30,99</td>
                 </tr>
                 <tr>
                     <td>Morango</td>
-                    <td>25,99</td>
-                    <td>27,99</td>
-                    <td>26,99</td>
+                    <td>29,99</td>
+                    <td>31,99</td>
+                    <td>30,99</td>
                 </tr>
                 <tr>
                     <td>Maracujá</td>
-                    <td>27,99</td>
-                    <td>29,99</td>
-                    <td>28,99</td>
+                    <td>31,00</td>
+                    <td>33,00</td>
+                    <td>32,00</td>
                 </tr>
             </table>
+
+            <!-- ===== OBSERVAÇÃO ADICIONAL EMBAIXO DA TABELA (REFORÇO) ===== -->
+            <div style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--text-muted);">
+                <span style="background: rgba(200, 169, 110, 0.08); padding: 6px 16px; border-radius: 20px; display: inline-block;">
+                    ⚡ <strong>Smirnoff</strong> + R$ 2,00 em qualquer caipirinha
+                </span>
+            </div>
         </div>
 
         <!-- DOSES E SHOTS -->
@@ -661,7 +719,7 @@
             <div class="divider"></div>
             
             <div style="text-align: center;">
-                <span class="preco-unico">Todos os sabores · R$ 28,00</span>
+                <span class="preco-unico">Todos os sabores · R$ 30,00</span>
             </div>
 
             <table class="copao-table">
@@ -825,7 +883,7 @@
                 <div class="item">
                     <span class="item-name">Grey Goose + 5 Energéticos</span>
                     <span class="item-dots"></span>
-                    <span class="item-price">399,00</span>
+                    <span class="item-price">380,00</span>
                 </div>
                 <div class="item">
                     <span class="item-name">Smirnoff + 5 Energéticos</span>
